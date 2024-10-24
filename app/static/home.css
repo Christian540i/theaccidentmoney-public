@@ -1,0 +1,383 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    flex: 1;
+}
+
+.main-header {
+    background-color: white;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+    margin: 0;
+    color: #2c3e50;   /* Darker blue for the heading */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900; /* Make it bold */
+    letter-spacing: 1px; /* Add a slight letter-spacing for readability */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content Page Section (Flexbox for larger screens) */
+.content-page-container {
+    display: flex; /* Activates flexbox layout */
+    justify-content: space-between; /* Spreads items (text & video) apart */
+    align-items: center; /* Vertically centers the items */
+    padding: 40px;
+    background-color: #f9f9f9; /* Optional background color */
+    flex-direction: row; /* Ensures text and video are in a row (side-by-side) */
+}
+
+/* Left Text Section */
+.left-text-section {
+    flex: 1; /* Ensures text takes up its share of the row */
+    padding-right: 20px; /* Space between text and video */
+}
+
+.left-text-section h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-text-section p {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Right Video Section */
+.right-video-section {
+    flex: 1; /* Ensures video takes up its share of the row */
+    display: flex;
+    justify-content: flex-end; /* Aligns the video to the right side */
+    align-items: center; /* Vertically centers the video */
+}
+
+.right-video {
+    max-width: 100%; /* Controls the size of the video */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .content-page-container {
+        flex-direction: column; /* Stacks text on top of the video on small screens */
+        align-items: center; /* Centers both text and video horizontally */
+    }
+
+    .right-video-section {
+        margin-top: 20px; /* Adds spacing above the video */
+        justify-content: center; /* Centers the video horizontally on small screens */
+    }
+
+    .right-video {
+        max-width: 100%; /* Makes the video full width on small screens */
+    }
+
+    .left-text-section {
+        padding-right: 0; /* Removes padding when stacked vertically */
+    }
+}
+
+
+
+
+
+/* Footer Styling */
+.main-footer {
+    background: linear-gradient(to right, #1a1f29, #3a4c63);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.main-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Background Image Styling */
+
+
+/* Form Styling */
+
+
+.form-page-container {
+    background-image: url('../static/images/lawyer-hammer.png'); /* Path to form background image */
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+}
+
+.form-container {
+    
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;  /* Automatically center the form */
+    z-index: 2;  /* Ensure the form stays above the background */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.disclaimer-text {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* Icons Section */
+
+.icons-section {
+    background-color: #efefef; /* Add a background color */
+    padding: 20px 0; /* Reduce the space around the section */
+    text-align: center;
+}
+
+.icons-section h2 {
+    color: #2c3e50;   /* Darker blue for the heading */
+    
+    font-size: 2.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5vh;
+    margin-bottom: 5vh; /* Add spacing to the heading */
+    transition: transform 0.3s ease; /* Add smooth transition for the heading */
+    
+    
+    font-weight: 900; /* Make it bold */
+    text-transform: uppercase; /* Make the heading uppercase for emphasis */
+    letter-spacing: 1px; /* Add a slight letter-spacing for readability */
+    
+    
+}
+
+.icons-section h2:hover {
+    transform: translateY(-10px); /* Move heading upwards by 10px on hover */
+}
+
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 icons per row */
+    gap: 20px; /* Space between icons */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease; /* Add smooth transition to icons */
+}
+
+.icon-item:hover {
+    transform: translateY(-10px); /* Move icon upwards by 10px on hover */
+}
+
+.icon-item img {
+    width: 90px; /* Adjust the size of the icons */
+    height: 90px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.icon-item p {
+    font-size: 1.5em;
+    color: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif; /* Change the font family */
+    font-weight: 500; /* Make the font a bit bolder */
+     /* Apply italic style */
+    letter-spacing: 0.5px; /* Add some spacing between letters */
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 768px) {
+    .icons-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 icons per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icons-grid {
+        grid-template-columns: 1fr; /* 1 icon per row on very small screens */
+    }
+}
+
+/* Fourth Section */
+/* Fourth Section */
+.fourth-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9; /* Optional background color */
+    flex-direction: row; /* Ensures video and text are side by side on larger screens */
+}
+
+.left-video-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.left-video {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures the video scales properly */
+}
+
+.right-text-section {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.right-text-section h2 {
+    font-size: 2.5em; /* Increase font size */
+    color: #2c3e50;   /* Darker blue for the heading */
+    font-weight: 900; /* Make it bold */
+    text-transform: uppercase; /* Make the heading uppercase for emphasis */
+    letter-spacing: 1px; /* Add a slight letter-spacing for readability */
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.right-text-section p {
+    font-size: 1.4em;  /* Increase the paragraph font size */
+    font-weight: 400;  /* Slightly lighter weight for better readability */
+    color: #444;       /* Use a dark gray for contrast */
+    line-height: 1.6;  /* Increase line height for better readability */
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .fourth-section {
+        flex-direction: column; /* Stack the text and video vertically */
+        align-items: center; /* Center both text and video */
+    }
+
+    .right-text-section {
+        padding-left: 0; /* Remove padding when stacked vertically */
+    }
+
+    .left-video-section {
+        margin-top: 20px; /* Add space above the video when stacked */
+    }
+
+    .left-video {
+        max-width: 100%; /* Make the video full width on small screens */
+    }
+}
+
+
+
+
