@@ -22,5 +22,10 @@ urlpatterns = [
     path('', views.home, name='home'),
     # path('submit-lead/', views.submit_lead, name='submit_lead'),
     path('success/', views.success, name='success'),
+    path('privacy/', views.privacy, name='privacy'),
+    path('terms/',views.terms,name='terms'),
+    path('about/', views.about,name='about'),
+    path('russian/', views.home_russian, name='home_russian'),
+    
     
 ]

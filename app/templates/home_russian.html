@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Найдите адвоката для вашего ДТП</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="icon" href="{% static 'images/logo-high.png' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Logo and Heading Group -->
+                <div class="logo-heading">
+                    <img src="{% static 'images/logo-high.png' %}" alt="Логотип" class="header-logo">
+                    <h1>ДЕНЬГИ ЗА АВАРИЮ</h1>
+                </div>
+
+                <!-- Navigation -->
+                <nav>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about">О нас</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <!-- Lead Form Section with different background -->
+
+    <div class="form-page-container">
+        <div id="lead-form" class="form-container">
+            <form method="post" id="multi-step-form">
+                {% csrf_token %}
+                <!-- Progress bar Visual -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <!-- Step 1: Were you insured? -->
+                <div class="form-step" id="step-1">
+                    <h2 class="form-title">Свяжитесь с адвокатами по личным травмам в Нью-Йорке сегодня</h2>
+                    <h3>Были ли вы застрахованы?</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="insured-yes" name="insured" value="Yes">
+                        <label for="insured-yes">Да, я был застрахован</label>
+                        <input type="radio" id="insured-no" name="insured" value="No">
+                        <label for="insured-no">Нет, я не был застрахован</label>
+                    </div>
+                </div>
+
+                <!-- Step 2: Was it a commercial vehicle? -->
+                <div class="form-step" id="step-2">
+                    <h3>Это был коммерческий транспорт?</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="commercial-yes" name="commercial_vehicle" value="Yes">
+                        <label for="commercial-yes">Да, это был коммерческий транспорт</label>
+                        <input type="radio" id="commercial-no" name="commercial_vehicle" value="No">
+                        <label for="commercial-no">Нет, это был не коммерческий транспорт</label>
+                    </div>
+                </div>
+
+                <!-- Step 3: Did you sustain a injury? -->
+                <div class="form-step" id="step-3">
+                    <h3>Вы получили травму?</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="injured-yes" name="injured" value="Yes">
+                        <label for="injured-yes">Да, я получил травму</label>
+                        <input type="radio" id="injured-no" name="injured" value="No">
+                        <label for="injured-no">Нет, я не получил травму</label>
+                    </div>
+                </div>
+
+                <!-- Step 4: Was it a rear-end collision? -->
+                <div class="form-step" id="step-4">
+                    <h3>Это было столкновение сзади?</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="rearend-yes" name="rear_end" value="Yes">
+                        <label for="rearend-yes">Да, это было</label>
+                        <input type="radio" id="rearend-no" name="rear_end" value="No">
+                        <label for="rearend-no">Нет, меня ударили в другом месте</label>
+                    </div>
+                </div>
+
+                <!-- Step 5: Were you a passenger? -->
+                <div class="form-step" id="step-5">
+                    <h3>Вы были пассажиром?</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="passenger-yes" name="passenger" value="Yes">
+                        <label for="passenger-yes">Да, я был пассажиром</label>
+                        <input type="radio" id="passenger-no" name="passenger" value="No">
+                        <label for="passenger-no">Нет, я был водителем</label>
+                    </div>
+                </div>
+
+                <!-- Step 6: Were you a pedestrian? -->
+                <div class="form-step" id="step-6">
+                    <h3>Вы были пешеходом?</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="pedestrian-yes" name="pedestrian" value="Yes">
+                        <label for="pedestrian-yes">Да, я был пешеходом</label>
+                        <input type="radio" id="pedestrian-no" name="pedestrian" value="No">
+                        <label for="pedestrian-no">Нет, я был в транспортном средстве</label>
+                    </div>
+                </div>
+
+                <!-- Step 7: Personal Information (Name, Email, Phone) -->
+                <div class="form-step" id="step-7">
+                    <h3>Личная информация</h3>
+                    <label for="first_name" class="styled-label">Имя</label>
+                    <input type="text" id="first_name" name="first_name" required>
+
+                    <label for="last_name" class="styled-label">Фамилия</label>
+                    <input type="text" id="last_name" name="last_name" required>
+
+                    <label for="email" class="styled-label">Электронная почта</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone" class="styled-label">Номер телефона</label>
+                    <input type="text" id="phone" name="phone_number" required>
+
+                    <div class="radio-group">
+                        <button type="submit" class="submit-btn">Отправить мой запрос</button>
+                    </div>
+                    <p class="disclaimer-text">
+                        Нажимая кнопку «Отправить мой запрос», вы подтверждаете, что предоставили свое юридическое имя и номер телефона, соглашаетесь с Условиями и Политикой конфиденциальности и разрешаете Total Auto Accident Support и его партнеров связываться с вами с помощью автоматизированных технологий.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formSteps = document.querySelectorAll('.form-step');
+            const prevBtns = document.querySelectorAll('.prev-btn');
+            const progressBarContainer = document.querySelector('.progress-bar-container');
+            const progressBar = document.getElementById('progress-bar');
+            let currentStep = 0;
+            let firstQuestionAnswered = false; // Track if the first question has been answered
+
+            // Function to update the progress bar width
+            function updateProgressBar(step) {
+                const progress = ((step) / formSteps.length) * 100;
+                progressBar.style.width = progress + '%';
+            }
+
+            // Show the current step and update progress
+            function showStep(step) {
+                formSteps.forEach((formStep, index) => {
+                    formStep.style.display = (index === step) ? 'block' : 'none';
+                });
+                updateProgressBar(step);
+            }
+
+            // Move to the next step when a radio button is selected, unless on the last step
+            formSteps.forEach((formStep, index) => {
+                const radios = formStep.querySelectorAll('input[type="radio"]');
+                radios.forEach((radio) => {
+                    radio.addEventListener('change', () => {
+                        // Reveal progress bar if first question answered
+                        if (!firstQuestionAnswered) {
+                            progressBarContainer.style.display = 'block';
+                            firstQuestionAnswered = true;
+                        }
+                        // Ensure we don't auto-advance past the last step
+                        if (currentStep < formSteps.length - 1) {
+                            currentStep++;
+                            showStep(currentStep);
+                        }
+                    });
+                });
+            });
+
+            // Previous button event listeners to go back a step
+            prevBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    if (currentStep > 0) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            // Initially show the first step and update progress
+            showStep(currentStep);
+        });
+    </script>
+
+    <!-- Main Content Section with different background -->
+    <div class="content-page-container">
+        <!-- Left Section -->
+        <div class="left-text-section">
+            <h2>Почему вам нужен адвокат после ДТП</h2>
+            <p>После ДТП справляться с последствиями может быть сложно. Страховые компании могут попытаться уменьшить вашу компенсацию, медицинские счета могут накапливаться, а определить, кто несет ответственность, не всегда просто. Поэтому наличие опытного адвоката рядом крайне важно.</p>
+            <p>Без опытного юриста вы рискуете получить меньше компенсации или стать жертвой страховых компаний, которые заботятся о своей прибыли. Адвокат знает все тонкости юридической системы и будет заниматься всей документацией, переговорами и юридическими вопросами за вас.</p>
+        </div>
+
+        <!-- Right Section with Video -->
+        <div class="right-video-section">
+            <video class="right-video" autoplay loop muted playsinline>
+                <source src="{% static 'videos/lawyer-to-client.mp4' %}" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+    </div>
+
+    <div class="icons-section">
+        <h2>ВАМ МОГУТ ВЫПЛАТИТЬ ЗА</h2>
+        <div class="icons-grid">
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-1.png' %}" alt="Иконка 1">
+                <p>Утрата стоимости автомобиля</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-2.png' %}" alt="Иконка 2">
+                <p>Медицинские расходы</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-3.png' %}" alt="Иконка 3">
+                <p>Боль</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-4.png' %}" alt="Иконка 4">
+                <p>Потеря заработка</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-5.png' %}" alt="Иконка 5">
+                <p>Стресс</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-6.png' %}" alt="Иконка 6">
+                <p>Личные травмы</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-7.png' %}" alt="Иконка 7">
+                <p>Повреждение имущества</p>
+            </div>
+            <div class="icon-item">
+                <img src="{% static 'icons/dark-icon-8.png' %}" alt="Иконка 8">
+                <p>Реабилитация</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fourth Section for Law Firm Help -->
+    <div class="fourth-section">
+        <div class="left-video-section">
+            <video class="left-video" autoplay loop muted playsinline>
+                <source src="{% static 'videos/guy-car-crash.mp4' %}" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+        <div class="right-text-section">
+            <h2>Как наши юридические фирмы помогают вам</h2>
+            <p>Наши юридические фирмы специализируются на том, чтобы помочь клиентам получить компенсацию, на которую они имеют право после ДТП. Мы предлагаем персонализированную поддержку и связываем вас с лучшими юристами, которые помогут вам на каждом этапе.</p>
+            <p>Мы здесь, чтобы защищать ваши права и обеспечить, чтобы вы не остались одни, сталкиваясь со страховыми компаниями или другими юридическими трудностями. Позвольте нам взять на себя юридические сложности, чтобы вы могли сосредоточиться на восстановлении.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Деньги за аварию | <a href="/privacy">Политика конфиденциальности</a> | <a href='/terms'>Условия обслуживания</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

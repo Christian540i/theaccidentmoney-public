@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+
+
+import smtplib
 import os
 
 from pathlib import Path
@@ -27,6 +30,14 @@ SECRET_KEY = 'django-insecure-w33_23#ar1je))xaayg)m%v7x)%61jdszexemx9daj=3w3mq_)
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'cashfortraffic6@gmail.com'  # Replace with your email
+EMAIL_HOST_PASSWORD = 'zawotjloxqkjnfvm'   # Replace with your email password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # Application definition
