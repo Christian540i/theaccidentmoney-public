@@ -20,8 +20,14 @@ def home(request):
                 message=f'A new lead has been saved with the following details:\n\n'
                         f'Name: {lead.first_name} {lead.last_name}\n'
                         f'Email: {lead.email}\n'
-                        f'Phone: {lead.phone_number}\n\n'
-                        f'Language Spoken: {lead.language_spoken}',
+                        f'Phone: {lead.phone_number}\n'
+                        f'Language Spoken: {lead.language_spoken}\n\n'
+                        f'Insured: {lead.insured}\n'
+                        f'Commercial Vehicle: {lead.commercial_vehicle}\n'
+                        f'Injured (Fracture): {lead.injured}\n'
+                        f'Rear End: {lead.rear_end}\n'
+                        f'Passenger: {lead.passenger}\n'
+                        f'Pedestrian : {lead.pedestrian}',
                 from_email='cashfortraffic6@gmail.com',
                 recipient_list=['crusanovsky@gmail.com'],
                 fail_silently=False,
