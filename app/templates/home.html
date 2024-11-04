@@ -10,6 +10,12 @@
     <link rel="icon" href="{% static 'images/logo-high.png' %}" type="image/x-icon">
 </head>
 <body>
+    
+    <a href="/" class="call-now-btn">
+        <span class="contact-text">CONTACT US TODAY</span>
+        <span class="bold-phone">(213) - 286 - 2746</span>
+    </a>
+
     <div class="page-container">
         <!-- Header Section -->
         <header class="main-header">
@@ -21,12 +27,7 @@
                 </div>
 
                 <!-- Navigation -->
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                    </ul>
-                </nav>
+                
             </div>
         </header>
     </div>
@@ -41,109 +42,119 @@
 
 </head>
 <body>
+    
+    
+        <!-- Cartoon Judge Image -->
+        
 
-    <div class="form-page-container">
-        <div id="lead-form" class="form-container">
-
-
-            <form method="post" id="multi-step-form">
-                {% csrf_token %}
-                <!-- Progress bar Visual -->
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progress-bar"></div>
+        <div class="form-page-container">
+            <div class="form-wrapper">
+                <!-- Judge Image Container -->
+                
+        
+                <!-- Form Container -->
+                <div id="lead-form" class="form-container">
+                    <form method="post" id="multi-step-form">
+                        {% csrf_token %}
+        
+                        <!-- Progress Bar Visual -->
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+        
+                        <!-- Step 1: Were you insured? -->
+                        <div class="form-step" id="step-1">
+                            <h2 class="form-title">Begin your path to justice with a free consultation</h2>
+                            <h3>Were you insured?</h3>
+                            <div class="radio-group">
+                                <input type="radio" id="insured-yes" name="insured" value="Yes">
+                                <label for="insured-yes">Yes I was insured</label>
+                                <input type="radio" id="insured-no" name="insured" value="No">
+                                <label for="insured-no">No I was not insured</label>
+                            </div>
+                        </div>
+        
+                        <!-- Step 2: Was it a commercial vehicle? -->
+                        <div class="form-step" id="step-2">
+                            <h3>Was it a commercial vehicle?</h3>
+                            <div class="radio-group">
+                                <input type="radio" id="commercial-yes" name="commercial_vehicle" value="Yes">
+                                <label for="commercial-yes">Yes it was commercial</label>
+                                <input type="radio" id="commercial-no" name="commercial_vehicle" value="No">
+                                <label for="commercial-no">No it wasn't</label>
+                            </div>
+                        </div>
+        
+                        <!-- Step 3: Did you sustain a injury? -->
+                        <div class="form-step" id="step-3">
+                            <h3>Did you sustain an injury?</h3>
+                            <div class="radio-group">
+                                <input type="radio" id="injured-yes" name="injured" value="Yes">
+                                <label for="injured-yes">Yes I sustained an injury</label>
+                                <input type="radio" id="injured-no" name="injured" value="No">
+                                <label for="injured-no">No I didn't</label>
+                            </div>
+                        </div>
+        
+                        <!-- Step 4: Was it a rear-end collision? -->
+                        <div class="form-step" id="step-4">
+                            <h3>Was it a rear-end collision?</h3>
+                            <div class="radio-group">
+                                <input type="radio" id="rearend-yes" name="rear_end" value="Yes">
+                                <label for="rearend-yes">Yes it was</label>
+                                <input type="radio" id="rearend-no" name="rear_end" value="No">
+                                <label for="rearend-no">No I was hit somewhere else</label>
+                            </div>
+                        </div>
+        
+                        <!-- Step 5: Were you a passenger? -->
+                        <div class="form-step" id="step-5">
+                            <h3>Were you a passenger?</h3>
+                            <div class="radio-group">
+                                <input type="radio" id="passenger-yes" name="passenger" value="Yes">
+                                <label for="passenger-yes">Yes I was</label>
+                                <input type="radio" id="passenger-no" name="passenger" value="No">
+                                <label for="passenger-no">No I was driving</label>
+                            </div>
+                        </div>
+        
+                        <!-- Step 6: Were you a pedestrian? -->
+                        <div class="form-step" id="step-6">
+                            <h3>Were you a pedestrian?</h3>
+                            <div class="radio-group">
+                                <input type="radio" id="pedestrian-yes" name="pedestrian" value="Yes">
+                                <label for="pedestrian-yes">Yes I was</label>
+                                <input type="radio" id="pedestrian-no" name="pedestrian" value="No">
+                                <label for="pedestrian-no">No I was in a vehicle</label>
+                            </div>
+                        </div>
+        
+                        <!-- Step 7: Personal Information (Name, Email, Phone) -->
+                        <div class="form-step" id="step-7">
+                            <h3>Personal Information</h3>
+                            <label for="first_name" class="styled-label">First Name</label>
+                            <input type="text" id="first_name" name="first_name" required>
+        
+                            <label for="last_name" class="styled-label">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" required>
+        
+                            <label for="email" class="styled-label">Email</label>
+                            <input type="email" id="email" name="email" required>
+        
+                            <label for="phone" class="styled-label">Phone Number</label>
+                            <input type="text" id="phone" name="phone_number" required>
+        
+                            <div class="radio-group">
+                                <button type="submit" class="submit-btn">Submit My Claim</button>
+                            </div>
+                            <p class="disclaimer-text">
+                                By clicking the “Submit My Claim” button, you certify...
+                            </p>
+                        </div>
+                    </form>
                 </div>
-
-                <!-- Step 1: Were you insured? -->
-                <div class="form-step" id="step-1">
-                    <h2 class="form-title">Get Connected with Personal Injury Attorneys in New York Today</h2>
-                    <h3>Were you insured?</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="insured-yes" name="insured" value="Yes">
-                        <label for="insured-yes">Yes I was insured</label>
-                        <input type="radio" id="insured-no" name="insured" value="No">
-                        <label for="insured-no">No I was not insured</label>
-                    </div>
-                </div>
-
-                <!-- Step 2: Was it a commercial vehicle? -->
-                <div class="form-step" id="step-2">
-                    <h3>Was it a commercial vehicle?</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="commercial-yes" name="commercial_vehicle" value="Yes">
-                        <label for="commercial-yes">Yes it was commercial</label>
-                        <input type="radio" id="commercial-no" name="commercial_vehicle" value="No">
-                        <label for="commercial-no">No it wasn't</label>
-                    </div>
-                </div>
-
-                <!-- Step 3: Did you sustain a injured? -->
-                <div class="form-step" id="step-3">
-                    <h3>Did you sustain a injury?</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="injured-yes" name="injured" value="Yes">
-                        <label for="injured-yes">Yes I sustained a injury</label>
-                        <input type="radio" id="injured-no" name="injured" value="No">
-                        <label for="injured-no">No I didn't</label>
-                    </div>
-                </div>
-
-                <!-- Step 4: Was it a rear-end collision? -->
-                <div class="form-step" id="step-4">
-                    <h3>Was it a rear-end collision?</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="rearend-yes" name="rear_end" value="Yes">
-                        <label for="rearend-yes">Yes it was</label>
-                        <input type="radio" id="rearend-no" name="rear_end" value="No">
-                        <label for="rearend-no">No I was hit somewhere else</label>
-                    </div>
-                </div>
-
-                <!-- Step 5: Were you a passenger? -->
-                <div class="form-step" id="step-5">
-                    <h3>Were you a passenger?</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="passenger-yes" name="passenger" value="Yes">
-                        <label for="passenger-yes">Yes I was</label>
-                        <input type="radio" id="passenger-no" name="passenger" value="No">
-                        <label for="passenger-no">No I was driving</label>
-                    </div>
-                </div>
-
-                <!-- Step 6: Were you a pedestrian? -->
-                <div class="form-step" id="step-6">
-                    <h3>Were you a pedestrian?</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="pedestrian-yes" name="pedestrian" value="Yes">
-                        <label for="pedestrian-yes">Yes I was</label>
-                        <input type="radio" id="pedestrian-no" name="pedestrian" value="No">
-                        <label for="pedestrian-no">No I was in a vehicle</label>
-                    </div>
-                </div>
-
-                <!-- Step 7: Personal Information (Name, Email, Phone) -->
-                <div class="form-step" id="step-7">
-                    <h3>Personal Information</h3>
-                    <label for="first_name" class="styled-label">First Name</label>
-                    <input type="text" id="first_name" name="first_name" required>
-
-                    <label for="last_name" class="styled-label">Last Name</label>
-                    <input type="text" id="last_name" name="last_name" required>
-
-                    <label for="email" class="styled-label">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="phone" class="styled-label">Phone Number</label>
-                    <input type="text" id="phone" name="phone_number" required>
-
-                    <div class="radio-group">
-                        <button type="submit" class="submit-btn">Submit My Claim</button>
-                    </div>
-                    <p class="disclaimer-text">
-                    By clicking the “Submit My Claim” button, you certify that you have provided your legal name and your own phone number, you agree to the Terms and Conditions and Privacy Policy and authorize Total Auto Accident Support and its partners to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate “Do Not Call” list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the “Submit My Claim” button and submitting this form, I affirm that I have read and agree to this Site's Terms and Conditions (including the arbitration provision and the E-SIGN consent) and Privacy Policy and agree to receive email from Complete Credit Match and affiliated brands that may be of interest to you.
-                </p>
-                </div>
+            </div>
         </div>
-    </div>
 
 
 
@@ -207,6 +218,32 @@
 
 
     </script>
+
+    <div class="display-stats-container">
+        
+        <div class="stats-list">
+            <div class="stat-item">
+                <h3>3,000 Accidents Daily</h3>
+                <p>Every day, over 3,000 car accidents occur in New York alone, many resulting in injuries and property damage.</p>
+            </div>
+            <div class="stat-item">
+                <h3>80% of Claims Disputed</h3>
+                <p>Insurance companies dispute or minimize 80% of car accident claims, making legal representation essential for fair compensation.</p>
+            </div>
+            <div class="stat-item">
+                <h3>Average Settlement: $20,000</h3>
+                <p>The average car accident settlement is around $20,000, but settlements can vary significantly based on injury severity.</p>
+            </div>
+            <div class="stat-item">
+                <h3>50% of Cases Involve Injuries</h3>
+                <p>About half of all car accident cases involve injuries, with some resulting in long-term medical costs and rehabilitation needs.</p>
+            </div>
+            <div class="stat-item">
+                <h3>Legal Help Increases Compensation by 3x</h3>
+                <p>Studies show that accident victims with legal representation receive, on average, three times more in compensation.</p>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -284,6 +321,63 @@
             <p>We are here to fight for your rights and ensure you are not alone in dealing with insurance companies or any legal challenges that come your way. Let us handle the legal complexities so you can focus on recovering.</p>
         </div>
     </div>
+
+    <div class="fifth-section">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq" onclick="toggleAnswer(this)"> What should I do immediately after a car accident? <span class="arrow">▼</span></button>
+                <div class="answer">
+                    <p>First, ensure everyone’s safety and call for medical assistance if necessary. Gather contact information, take photos, and report the accident to the police. Then, consider contacting an attorney to understand your rights and options.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq" onclick="toggleAnswer(this)"> Do I really need a lawyer for a minor accident? <span class="arrow">▼</span></button>
+                <div class="answer">
+                    <p>Even in minor accidents, a lawyer can help protect your rights, especially if there are hidden injuries or complications with insurance. A lawyer can also help you recover compensation for damages you might not have considered.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq" onclick="toggleAnswer(this)"> How much does it cost to hire an MVA lawyer? <span class="arrow">▼</span></button>
+                <div class="answer">
+                    <p>Most MVA lawyers work on a contingency fee basis, meaning you only pay if you win your case. This allows you to access legal representation without upfront costs, with fees typically being a percentage of your settlement.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq" onclick="toggleAnswer(this)"> What kind of compensation can I receive after a car accident? <span class="arrow">▼</span></button>
+                <div class="answer">
+                    <p>You may be entitled to compensation for medical bills, lost wages, pain and suffering, vehicle damage, and any other losses directly resulting from the accident. An attorney can help maximize your claim.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq" onclick="toggleAnswer(this)"> How long will it take to resolve my case? <span class="arrow">▼</span></button>
+                <div class="answer">
+                    <p>The timeline varies depending on the complexity of your case and the willingness of the other party to negotiate. Simple cases may resolve in weeks, while more complex cases may take months or longer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const arrow = element.querySelector('.arrow');
+    
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                arrow.textContent = "▼"; // Down arrow when collapsed
+            } else {
+                answer.style.display = "block";
+                arrow.textContent = "▲"; // Up arrow when expanded
+            }
+        }
+    </script>
+    
+    
+    
+    
+    
+    
 
 
     <!-- Footer Section -->

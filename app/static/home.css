@@ -157,8 +157,15 @@ nav ul li a:hover {
     height: auto;
     border-radius: 10px;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for effects */
+    box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.3); /* Adds a red-tinted shadow for a cool glow effect */
 }
 
+.right-video:hover {
+    transform: scale(1.05); /* Slightly enlarges the video */
+    box-shadow: 0px 6px 25px rgba(255, 0, 0, 0.5); /* Adds a stronger red shadow glow on hover */
+    border: 2px solid rgba(255, 0, 0, 0.6); /* Adds a semi-transparent red border */
+}
 /* Responsive layout for smaller screens */
 @media (max-width: 768px) {
     .content-page-container {
@@ -222,6 +229,8 @@ nav ul li a:hover {
     padding: 40px 0;
 }
 
+
+
 .form-container {
     
     background-color: #fff;
@@ -236,42 +245,39 @@ nav ul li a:hover {
     z-index: 2;  /* Ensure the form stays above the background */
 }
 
+
+
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Slightly reduced gap for compact layout */
 }
 
 .form-title {
-    font-size: 2em; /* Increase font size */
-    color: #2c3e50;   /* Darker blue for the heading */
-    font-weight: 900; /* Make it bold */
-    text-transform: uppercase; /* Make the heading uppercase for emphasis */
-    letter-spacing: 1px; /* Add a slight letter-spacing for readability */
-    margin-bottom: 20px;
+    font-size: 1.8em; /* Slightly smaller font size */
+    color: #333;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center; /* Center the text */
+    text-align: center;
 }
 
 input, select {
     width: 100%;
-    padding: 12px;
+    padding: 10px; /* Reduced padding for inputs */
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    margin-bottom: 16px;
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    margin-bottom: 12px;
 }
 
 .submit-btn {
-    padding: 12px 20px;
+    padding: 10px 20px;
     background-color: #3498db;
     color: #fff;
     border: none;
@@ -286,7 +292,7 @@ input:focus, select:focus {
 }
 
 .disclaimer-text {
-    font-size: 0.8em;
+    font-size: 0.75em;
     color: #666;
     margin-top: 10px;
     line-height: 1.4;
@@ -299,7 +305,13 @@ input:focus, select:focus {
     background-color: #efefef; /* Add a background color */
     padding: 20px 0; /* Reduce the space around the section */
     text-align: center;
+    width: 100vw; /* Ensures the section spans the entire viewport width */
+    margin-left: calc(-50vw + 50%); /* Centers the section across the viewport */
+    position: relative; /* Allows better control over positioning */
+    left: 50%; /* Compensates for any shifting caused by width adjustments */
+    transform: translateX(-50%); /* Centers the content within the full-width section */
 }
+
 
 .icons-section h2 {
     color: #2c3e50;   /* Darker blue for the heading */
@@ -307,6 +319,7 @@ input:focus, select:focus {
     font-size: 2.5em;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5vh;
+    
     margin-bottom: 5vh; /* Add spacing to the heading */
     transition: transform 0.3s ease; /* Add smooth transition for the heading */
     
@@ -326,7 +339,7 @@ input:focus, select:focus {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 icons per row */
     gap: 20px; /* Space between icons */
-    max-width: 1200px;
+    
     margin: 0 auto;
 }
 
@@ -335,6 +348,7 @@ input:focus, select:focus {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 3vh;
     transition: transform 0.3s ease; /* Add smooth transition to icons */
 }
 
@@ -385,15 +399,27 @@ input:focus, select:focus {
 .left-video-section {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns the video to the left side */
+    align-items: center;
+    padding-left: 20px; /* Adds some space from the left edge if needed */
 }
 
 .left-video {
     max-width: 90%;
     height: auto;
     border-radius: 10px;
-    object-fit: cover; /* Ensures the video scales properly */
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.3);
+    margin-right: auto; /* Ensures any remaining space is to the right of the video */
 }
+
+.left-video:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 25px rgba(255, 0, 0, 0.5);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+}
+
 
 .right-text-section {
     flex: 1;
@@ -625,6 +651,263 @@ button:hover {
     background-color: #4a9fe9;
     transition: width 0.3s ease-in-out;
 }
+
+/* Section 5 */
+
+.fifth-section {
+    
+    width: 100%;
+    background-color: #2c3e50;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2.5em; /* Smaller font size on mobile */
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #2c3e50;
+    color: #fff;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Reduced margin for mobile */
+    overflow: hidden;
+}
+
+.faq {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.5em; /* Smaller font size for better readability on mobile */
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    padding: 12px 20px; /* Extra padding on the left and right for desktop */
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.faq:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.answer {
+    display: none;
+    padding: 12px; /* Reduced padding for mobile */
+    font-size: 1em; /* Smaller font size for mobile */
+    color: #fff;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.arrow {
+    font-size: 1em;
+    transition: transform 0.3s;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .fifth-section {
+        padding: 20px 10px; /* Narrower padding for smaller screens */
+    }
+
+    .faq-title {
+        font-size: 2em; /* Smaller font size for better fit on mobile */
+        margin-bottom: 4vh;
+    }
+
+    .faq {
+        font-size: 1.3em; /* Adjust FAQ question size */
+        
+        padding: 10px 15px; /* Add padding on left and right for mobile */
+    }
+
+    .answer {
+        font-size: 1em; /* Adjust answer font size */
+        padding: 10px; /* Adjust answer padding */
+    }
+
+    .arrow {
+        font-size: 0.8em; /* Adjust arrow size for mobile */
+    }
+}
+
+
+
+
+
+
+/* stat section */
+/* Stat Section */
+
+/* Stat Section */
+.display-stats-container {
+    padding: 15px;
+    background-color: #e74c3c;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0; /* Start hidden for fade-in */
+    transform: translateY(20px); /* Initial position for fade-in effect */
+    animation: fadeIn 0.8s ease-out forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to final position */
+    }
+}
+
+.display-stats-container h2 {
+    color: #2c3e50;
+    font-weight: 900;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stats-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.stat-item {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    flex: 1 1 100%;
+    max-width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.stat-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    background-color: #f0f8ff; /* Subtle color change on hover */
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+    .stat-item {
+        flex: 1 1 48%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .stats-list {
+        flex-wrap: nowrap;
+        gap: 15px;
+        text-align: center;
+    }
+    .stat-item {
+        flex: 1;
+    }
+}
+
+.stat-item h3 {
+    color: #34495e;
+    font-weight: bold;
+    font-size: 1.7em;
+    margin-bottom: 4px;
+}
+
+.stat-item p {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .display-stats-container h2 {
+        font-size: 1.5em; /* Smaller title for mobile */
+    }
+
+    .stat-item h3 {
+        font-size: 1.4em; /* Smaller heading size on mobile */
+    }
+
+    .stat-item p {
+        font-size: 1em; /* Smaller paragraph text for mobile */
+    }
+}
+
+
+
+
+
+.call-now-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    
+}
+
+.call-now-btn .bold-phone {
+    font-weight: 1000; /* Extra bold for phone number */
+}
+
+.call-now-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .call-now-btn {
+        font-size: 1em; /* Smaller font size */
+        padding: 8px 15px; /* Reduced padding */
+        top: 10px; /* Move closer to the top */
+        align-items: right;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
