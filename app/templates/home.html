@@ -12,6 +12,7 @@
 <body>
     
     <a href="/" class="call-now-btn">
+        <img src="{% static 'icons/phone-icon-high.png' %}" alt="Phone Icon" class="phone-icon">
         <span class="contact-text">CONTACT US TODAY</span>
         <span class="bold-phone">(213) - 286 - 2746</span>
     </a>
@@ -48,12 +49,20 @@
         
 
         <div class="form-page-container">
-            <div class="form-wrapper">
-                <!-- Judge Image Container -->
+
+            <video class="background-video" autoplay loop muted playsinline>
+                <source src="{% static 'videos/nyc-skyline-4k.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            
                 
-        
+                
+            
                 <!-- Form Container -->
                 <div id="lead-form" class="form-container">
+                    
+
                     <form method="post" id="multi-step-form">
                         {% csrf_token %}
         
@@ -148,12 +157,13 @@
                                 <button type="submit" class="submit-btn">Submit My Claim</button>
                             </div>
                             <p class="disclaimer-text">
-                                By clicking the “Submit My Claim” button, you certify...
+                                By clicking the “Submit My Claim” button, you certify that you have provided your legal name and your own phone number, you agree to the Terms and Conditions and Privacy Policy and authorize TheAccidentMoney and its <a href="/partners">partners</a> to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate “Do Not Call” list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the “Submit My Claim” button and submitting this form, I affirm that I have read and agree to this Sites Terms and Conditions(including the arbitration provision and the E-SIGN consent) and Privacy Policy and agree to receive email from TheAccidentMoney and affiliated brands that may be of interest to you.
                             </p>
                         </div>
                     </form>
                 </div>
-            </div>
+            
+            
         </div>
 
 
@@ -219,6 +229,33 @@
 
     </script>
 
+    
+
+
+
+
+    <!-- Main Content Section with different background -->
+    <div class="content-page-container">
+
+            <!-- Left Section -->
+            <div class="left-text-section">
+                <h2>Our Process</h2>
+                <p>Start by filling out our simple form or giving us a quick call for a <span class="highlight-free">FREE</span> case evaluation. We’ll discuss the details of your case and guide you through every step to ensure you understand your options and the path forward.</p>
+                <p>Next, we connect you with an experienced attorney dedicated to fighting for your rights. Our lawyers charge you absolutely <span class="highlight-free">NOTHING</span> upfront — you only pay if we win your case. With us, there’s no financial risk, just committed support focused on getting you the compensation you deserve.</p>
+            </div>
+            
+
+            <!-- Right Section with Video -->
+            <div class="right-video-section">
+                <video class="right-video" autoplay loop muted playsinline>
+                    <source src="{% static 'videos/lawyer-to-client.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+        </div>
+    </div>
+
+
     <div class="display-stats-container">
         
         <div class="stats-list">
@@ -234,38 +271,11 @@
                 <h3>Average Settlement: $20,000</h3>
                 <p>The average car accident settlement is around $20,000, but settlements can vary significantly based on injury severity.</p>
             </div>
-            <div class="stat-item">
-                <h3>50% of Cases Involve Injuries</h3>
-                <p>About half of all car accident cases involve injuries, with some resulting in long-term medical costs and rehabilitation needs.</p>
-            </div>
+            
             <div class="stat-item">
                 <h3>Legal Help Increases Compensation by 3x</h3>
                 <p>Studies show that accident victims with legal representation receive, on average, three times more in compensation.</p>
             </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Main Content Section with different background -->
-    <div class="content-page-container">
-
-            <!-- Left Section -->
-            <div class="left-text-section">
-                <h2>Why You Need a Lawyer After a Car Accident</h2>
-                <p>After a car accident, dealing with the aftermath can be overwhelming. Insurance companies may try to minimize your claim, medical bills can pile up, and figuring out who’s responsible isn’t always straightforward. That’s why having a skilled lawyer by your side is crucial.</p>
-                <p>Without an experienced attorney, you could risk being undercompensated or taken advantage of by insurance companies that are focused on their bottom line. A lawyer knows the ins and outs of the legal system and will handle all the paperwork, negotiations, and legal complexities on your behalf.</p>
-
-            </div>
-
-            <!-- Right Section with Video -->
-            <div class="right-video-section">
-                <video class="right-video" autoplay loop muted playsinline>
-                    <source src="{% static 'videos/lawyer-to-client.mp4' %}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-
         </div>
     </div>
 
@@ -317,7 +327,7 @@
         </div>
         <div class="right-text-section">
             <h2>How Our Law Firms Help You</h2>
-            <p>Our law firms specialize in helping clients receive the compensation they deserve after a car accident. We offer personalized support and connect you with top legal experts who will guide you through the process, from medical expenses to loss of wages and more. Our goal is to make sure you receive the best possible outcome in your case.</p>
+            <p>Our law firms specialize in helping clients receive the <span class="highlight-free">COMPENSATION</span> they deserve after a car accident. We offer personalized support and connect you with top legal experts who will guide you through the process, from medical expenses to loss of wages and more. Our goal is to make sure you receive the best possible outcome in your case.</p>
             <p>We are here to fight for your rights and ensure you are not alone in dealing with insurance companies or any legal challenges that come your way. Let us handle the legal complexities so you can focus on recovering.</p>
         </div>
     </div>
@@ -372,6 +382,22 @@
             }
         }
     </script>
+
+    <!-- Sixth Section -->
+    <div class="sixth-section">
+        <div class="left-content">
+            <h2>Don’t Wait – Protect Your Legal Rights Now!</h2>
+            <p>If you’ve been in a car accident, acting quickly can make a huge difference in your recovery and compensation. Our dedicated legal team is ready to provide the guidance you need, helping you receive the maximum support and justice you deserve.</p>
+            <p><strong>Don’t delay!</strong> Every moment counts. Reach out to us now and let us advocate for your rights, clarify the process, and secure the compensation you’re entitled to. <span class="highlight-free">MESSAGE US TODAY FOR A FREE CONSULTATION!</span></p>
+        </div>
+        
+        <div class="right-content">
+            <img src="{% static 'images/start-now.png' %}" alt="Legal Rights Chart" class="content-image">
+        </div>
+        
+
+    </div>
+
     
     
     

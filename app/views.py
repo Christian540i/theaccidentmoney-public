@@ -90,3 +90,6 @@ def terms(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def partners(request):
+    return render(request, 'partners.html')

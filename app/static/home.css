@@ -134,6 +134,12 @@ nav ul li a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.highlight-free {
+    color: #e74c3c; /* Use a red color code */
+    font-weight: bold; /* Optionally, make it bold for emphasis */
+    font-weight: 900;
+}
+
 .cta-button {
     display: inline-block;
     margin-top: 20px;
@@ -222,27 +228,41 @@ nav ul li a:hover {
 /* Form Styling */
 
 
+
+
 .form-page-container {
-    background-image: url('../static/images/lawyer-hammer.png'); /* Path to form background image */
-    background-size: cover;
-    background-position: center;
+    position: auto;
     padding: 40px 0;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    
+    
+}
+
+.background-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
 }
 
 
 
+
 .form-container {
-    
-    background-color: #fff;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.92); /* Semi-transparent background for readability */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
     max-width: 600px;
+    width: 100%;
     margin: auto;
-    margin-top: 10vh;
-    margin-bottom: 10vh;  /* Automatically center the form */
-    z-index: 2;  /* Ensure the form stays above the background */
+    z-index: 1; /* Ensures form content is above the video */
 }
 
 
@@ -302,6 +322,7 @@ input, select {
 /* Icons Section */
 
 .icons-section {
+    
     background-color: #efefef; /* Add a background color */
     padding: 20px 0; /* Reduce the space around the section */
     text-align: center;
@@ -344,6 +365,7 @@ input, select {
 }
 
 .icon-item {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -357,6 +379,8 @@ input, select {
 }
 
 .icon-item img {
+    box-shadow: 0px 6px 25px rgba(240, 92, 92, 0.835); /* Adds a stronger red shadow glow on hover */
+    border: 2px solid rgba(255, 0, 0, 0.6);
     width: 90px; /* Adjust the size of the icons */
     height: 90px;
     margin-bottom: 10px;
@@ -658,6 +682,7 @@ button:hover {
     
     width: 100%;
     background-color: #2c3e50;
+    
 }
 
 .faq-title {
@@ -672,6 +697,7 @@ button:hover {
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 10vh;
 }
 
 .faq-item {
@@ -687,7 +713,7 @@ button:hover {
     width: 100%;
     background: none;
     border: none;
-    font-size: 1.5em; /* Smaller font size for better readability on mobile */
+    font-size: 2em; /* Smaller font size for better readability on mobile */
     font-weight: bold;
     color: #fff;
     text-align: left;
@@ -706,9 +732,11 @@ button:hover {
 }
 
 .answer {
+
+    font-weight: 750;
     display: none;
     padding: 12px; /* Reduced padding for mobile */
-    font-size: 1em; /* Smaller font size for mobile */
+    font-size: 1.5em; /* Smaller font size for mobile */
     color: #fff;
     line-height: 1.5;
     font-family: Arial, Helvetica, sans-serif;
@@ -757,7 +785,7 @@ button:hover {
 /* Stat Section */
 .display-stats-container {
     padding: 15px;
-    background-color: #e74c3c;
+    background-color: #2c3e50;
     border-radius: 6px;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 0; /* Start hidden for fade-in */
@@ -792,7 +820,7 @@ button:hover {
     border: 1px solid #dcdcdc;
     text-align: center;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 6px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
     flex: 1 1 100%;
@@ -857,6 +885,8 @@ button:hover {
 
 
 .call-now-btn {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
     position: fixed;
     top: 20px;
     right: 20px;
@@ -870,7 +900,13 @@ button:hover {
     font-size: 1.7em;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
-    
+    z-index: 100;
+    gap: 10px; /* Adds space between items */
+}
+
+.call-now-btn .phone-icon {
+    width: 75px; /* Adjust size as needed */
+    height: auto;
 }
 
 .call-now-btn .bold-phone {
@@ -885,14 +921,98 @@ button:hover {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .call-now-btn {
-        font-size: 1em; /* Smaller font size */
-        padding: 8px 15px; /* Reduced padding */
-        top: 10px; /* Move closer to the top */
-        align-items: right;
-        
+        font-size: 1em;
+        padding: 8px 15px;
+        top: 10px;
+        gap: 5px; /* Adjust gap for mobile */
+    }
+    .call-now-btn .phone-icon {
+        width: 30px; /* Smaller icon size for mobile */
     }
 }
 
+
+
+/* Sixth Section Styling */
+.sixth-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px; /* Match the padding of .fourth-section */
+    background-color: #ffffff;
+    flex-direction: row; /* Side-by-side layout on larger screens */
+    
+    
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Left content styling */
+.sixth-section .left-content {
+    flex: 1;
+    padding-right: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Heading styling to match .right-text-section in .fourth-section */
+.sixth-section .left-content h2 {
+    font-size: 2.5em;
+    color: #34495e;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling to match .right-text-section p */
+.sixth-section .left-content p {
+    font-size: 1.6em;
+    color: #444;
+    line-height: 1.6;
+    font-weight: 750;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Right content styling */
+.sixth-section .right-content {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+/* Image styling to match .left-video in .fourth-section */
+.sixth-section .content-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.sixth-section .content-image:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    box-shadow: 0px 6px 25px rgba(255, 0, 0, 0.5); /* Adds a stronger red shadow glow on hover */
+    border: 2px solid rgba(255, 0, 0, 0.6);
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .sixth-section {
+        flex-direction: column; /* Stack the content vertically */
+        align-items: left; /* Center both content and image */
+    }
+
+    .sixth-section .left-content {
+        padding-right: 0; /* Remove padding when stacked vertically */
+        text-align: left; /* Center-align text */
+    }
+
+    .sixth-section .content-image {
+        max-width: 100%; /* Make the image full width on small screens */
+        margin-top: 20px; /* Add space above the image when stacked */
+    }
+}
 
 
 
