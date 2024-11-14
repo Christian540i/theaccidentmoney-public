@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,46 @@
     {% load static %}
     <!-- Google Font Link -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'success.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    
 </head>
 <body>
     <!-- Header Section -->
-    <header class="main-header">
-        <div class="header-container">
-            <h1>The Accident Money</h1>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    
-                    <li><a href="/about">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="page-container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Logo and Heading Group -->
+                <div class="logo-heading">
+                    <img src="{% static 'images/logo-dark.png' %}" alt="Logo" class="header-logo">
+                    <h1>ACCIDENT MONEY</h1>
+                </div>
+    
+                <!-- Navigation -->
+                <nav class="header-navigation">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <a href="tel:6467916997" class="call-now-btn">
+        <img src="{% static 'icons/phone-icon-high.png' %}" alt="Phone Icon" class="phone-icon">
+        <span class="contact-text">CONTACT US TODAY</span>
+        <span class="bold-phone">(646) - 791 - 6997</span>
+    </a>
+    
 
     <!-- Thank You Message Section -->
     <div class="thank-you-container">
         <h2>THANK YOU for your submission!</h2>
-        <p>A Legal Representative will contact you shortly if your Claim Review meets the criteria.</p>
+        <p class="thank-you-p">A Legal Representative will contact you shortly if your Claim Review meets the criteria.</p>
+    
+        <!-- Home Button -->
+        <a href="{% url 'home' %}" class="home-button-success">Go to Home</a>
     </div>
 
     <!-- Footer Section -->

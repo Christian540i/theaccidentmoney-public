@@ -15,13 +15,16 @@ class Lead(models.Model):
         ('Yes', 'Yes'),
         ('No', 'No'),
     ]
+
+    insured = models.CharField(max_length=3, choices=YES_NO, default='No', blank=True, null=True)  # Insured (Yes/No)
+    commercial_vehicle = models.CharField(max_length=3, choices=YES_NO, default='No', blank=True, null=True)  # Commercial Vehicle (Yes/No)
+    injured = models.CharField(max_length=3, choices=YES_NO, default='No', blank=True, null=True)  # Fracture (Yes/No)
+    rear_end = models.CharField(max_length=3, choices=YES_NO, default='No', blank=True, null=True)  # Rear End (Yes/No)
+    passenger = models.CharField(max_length=3, choices=YES_NO, default='No', blank=True, null=True)  # Passenger involved (Yes/No)
+    pedestrian = models.CharField(max_length=3, choices=YES_NO, default='No', blank=True, null=True)  # Pedestrian involved (Yes/No)
+
     
-    insured = models.CharField(max_length=3, choices=YES_NO, default='No')  # Insured (Yes/No)
-    commercial_vehicle = models.CharField(max_length=3, choices=YES_NO, default='No')  # Commercial Vehicle (Yes/No)
-    injured = models.CharField(max_length=3, choices=YES_NO, default='No')  # Fracture (Yes/No)
-    rear_end = models.CharField(max_length=3, choices=YES_NO, default='No')  # Rear End (Yes/No)
-    passenger = models.CharField(max_length=3, choices=YES_NO, default='No')  # Passenger involved (Yes/No)
-    pedestrian = models.CharField(max_length=3, choices=YES_NO, default='No')  # Pedestrian involved (Yes/No)
+   
 
     # Timestamp for when the lead was created
     created_at = models.DateTimeField(auto_now_add=True)

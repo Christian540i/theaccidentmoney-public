@@ -7,14 +7,86 @@
     {% load static %}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-    <link rel="icon" href="{% static 'images/logo-high.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/logo-dark.png' %}" type="image/x-icon">
+        <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5198478,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+        <!-- Microsoft convertion API -->
+            <script>
+            (function(w,d,t,r,u)
+            {
+                var f,n,i;
+                w[u]=w[u]||[],f=function()
+                {
+                    var o={ti:"343161173", enableAutoSpaTracking: true};
+                    o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")
+                },
+                n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function()
+                {
+                    var s=this.readyState;
+                    s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)
+                },
+                i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)
+            })
+            (window,document,"script","//bat.bing.com/bat.js","uetq");
+        </script>
+        <!-- Snap Pixel Code -->
+        <script type='text/javascript'>
+            (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+            {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+            a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+            r.src=n;var u=t.getElementsByTagName(s)[0];
+            u.parentNode.insertBefore(r,u);})(window,document,
+            'https://sc-static.net/scevent.min.js');
+
+            snaptr('init', 'e90333cc-a58f-4e9c-9cd4-12a9861ac330', {});
+
+            snaptr('track', 'PAGE_VIEW');
+
+        </script>
+        <!-- End Snap Pixel Code -->
+        <!-- Reddit Pixel -->
+        <script>
+        !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_fyrs6dagpagd');rdt('track', 'PageVisit');
+        </script>
+        <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
+        <!-- End Reddit Pixel -->
+
+
+        <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16707196956">
+            </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-16707196956');
+        </script>
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
-    
-    <a href="/" class="call-now-btn">
+
+    <a href="tel:6467916997" class="call-now-btn">
         <img src="{% static 'icons/phone-icon-high.png' %}" alt="Phone Icon" class="phone-icon">
         <span class="contact-text">CONTACT US TODAY</span>
-        <span class="bold-phone">(213) - 286 - 2746</span>
+        <span class="bold-phone">(646) - 791 - 6997</span>
     </a>
 
     <div class="page-container">
@@ -23,12 +95,12 @@
             <div class="header-container">
                 <!-- Logo and Heading Group -->
                 <div class="logo-heading">
-                    <img src="{% static 'images/logo-high.png' %}" alt="Logo" class="header-logo">
+                    <img src="{% static 'images/logo-dark.png' %}" alt="Logo" class="header-logo">
                     <h1>ACCIDENT MONEY</h1>
                 </div>
 
                 <!-- Navigation -->
-                
+
             </div>
         </header>
     </div>
@@ -43,127 +115,48 @@
 
 </head>
 <body>
-    
-    
+
+
         <!-- Cartoon Judge Image -->
-        
+
 
         <div class="form-page-container">
-
-            <video class="background-video" autoplay loop muted playsinline>
-                <source src="{% static 'videos/nyc-skyline-4k-short.mp4' %}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            
-                
-                
-            
-                <!-- Form Container -->
-                <div id="lead-form" class="form-container">
-                    
-
-                    <form method="post" id="multi-step-form">
-                        {% csrf_token %}
+            <img class="background-image" src="{% static 'images/accident-background.png' %}" alt="Accident Background">
         
-                        <!-- Progress Bar Visual -->
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" id="progress-bar"></div>
+            <!-- Form Container -->
+            <div id="lead-form" class="form-container">
+                <form method="post" id="basic-info-form">
+                    {% csrf_token %}
+        
+                    <!-- Form Title -->
+                    <h2 class="form-title">Got injured in a <span class="highlight-free">Car Accident?</span> Don't wait, get your free consultation now!</h2>
+        
+                    <!-- Personal Information (Name, Email, Phone) -->
+                    <div class="form-step" id="step-1">
+                        <label for="first_name" class="styled-label">First Name</label>
+                        <input type="text" id="first_name" name="first_name" required>
+        
+                        <label for="last_name" class="styled-label">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" required>
+        
+                        <label for="email" class="styled-label">Email</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="phone" class="styled-label">Phone Number</label>
+                        <input type="text" id="phone" name="phone_number" required>
+        
+                        <!-- Submit Button -->
+                        <div class="radio-group">
+                            <button type="submit" class="submit-btn">Submit My Claim</button>
                         </div>
         
-                        <!-- Step 1: Were you insured? -->
-                        <div class="form-step" id="step-1">
-                            <h2 class="form-title">Begin your path to justice with a free consultation</h2>
-                            <h3>Were you insured?</h3>
-                            <div class="radio-group">
-                                <input type="radio" id="insured-yes" name="insured" value="Yes">
-                                <label for="insured-yes">Yes I was insured</label>
-                                <input type="radio" id="insured-no" name="insured" value="No">
-                                <label for="insured-no">No I was not insured</label>
-                            </div>
-                        </div>
-        
-                        <!-- Step 2: Was it a commercial vehicle? -->
-                        <div class="form-step" id="step-2">
-                            <h3>Was it a commercial vehicle?</h3>
-                            <div class="radio-group">
-                                <input type="radio" id="commercial-yes" name="commercial_vehicle" value="Yes">
-                                <label for="commercial-yes">Yes it was commercial</label>
-                                <input type="radio" id="commercial-no" name="commercial_vehicle" value="No">
-                                <label for="commercial-no">No it wasn't</label>
-                            </div>
-                        </div>
-        
-                        <!-- Step 3: Did you sustain a injury? -->
-                        <div class="form-step" id="step-3">
-                            <h3>Did you sustain an injury?</h3>
-                            <div class="radio-group">
-                                <input type="radio" id="injured-yes" name="injured" value="Yes">
-                                <label for="injured-yes">Yes I sustained an injury</label>
-                                <input type="radio" id="injured-no" name="injured" value="No">
-                                <label for="injured-no">No I didn't</label>
-                            </div>
-                        </div>
-        
-                        <!-- Step 4: Was it a rear-end collision? -->
-                        <div class="form-step" id="step-4">
-                            <h3>Was it a rear-end collision?</h3>
-                            <div class="radio-group">
-                                <input type="radio" id="rearend-yes" name="rear_end" value="Yes">
-                                <label for="rearend-yes">Yes it was</label>
-                                <input type="radio" id="rearend-no" name="rear_end" value="No">
-                                <label for="rearend-no">No I was hit somewhere else</label>
-                            </div>
-                        </div>
-        
-                        <!-- Step 5: Were you a passenger? -->
-                        <div class="form-step" id="step-5">
-                            <h3>Were you a passenger?</h3>
-                            <div class="radio-group">
-                                <input type="radio" id="passenger-yes" name="passenger" value="Yes">
-                                <label for="passenger-yes">Yes I was</label>
-                                <input type="radio" id="passenger-no" name="passenger" value="No">
-                                <label for="passenger-no">No I was driving</label>
-                            </div>
-                        </div>
-        
-                        <!-- Step 6: Were you a pedestrian? -->
-                        <div class="form-step" id="step-6">
-                            <h3>Were you a pedestrian?</h3>
-                            <div class="radio-group">
-                                <input type="radio" id="pedestrian-yes" name="pedestrian" value="Yes">
-                                <label for="pedestrian-yes">Yes I was</label>
-                                <input type="radio" id="pedestrian-no" name="pedestrian" value="No">
-                                <label for="pedestrian-no">No I was in a vehicle</label>
-                            </div>
-                        </div>
-        
-                        <!-- Step 7: Personal Information (Name, Email, Phone) -->
-                        <div class="form-step" id="step-7">
-                            <h3>Personal Information</h3>
-                            <label for="first_name" class="styled-label">First Name</label>
-                            <input type="text" id="first_name" name="first_name" required>
-        
-                            <label for="last_name" class="styled-label">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" required>
-        
-                            <label for="email" class="styled-label">Email</label>
-                            <input type="email" id="email" name="email" required>
-        
-                            <label for="phone" class="styled-label">Phone Number</label>
-                            <input type="text" id="phone" name="phone_number" required>
-        
-                            <div class="radio-group">
-                                <button type="submit" class="submit-btn">Submit My Claim</button>
-                            </div>
-                            <p class="disclaimer-text">
-                                By clicking the “Submit My Claim” button, you certify that you have provided your legal name and your own phone number, you agree to the Terms and Conditions and Privacy Policy and authorize TheAccidentMoney and its <a href="/partners">partners</a> to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate “Do Not Call” list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the “Submit My Claim” button and submitting this form, I affirm that I have read and agree to this Sites Terms and Conditions(including the arbitration provision and the E-SIGN consent) and Privacy Policy and agree to receive email from TheAccidentMoney and affiliated brands that may be of interest to you.
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            
-            
+                        <!-- Disclaimer Text -->
+                        <p class="disclaimer-text">
+                            By clicking the “Submit My Claim” button, you certify that you have provided your legal name and your own phone number, you agree to the Terms and Conditions and Privacy Policy and authorize TheAccidentMoney and its <a href="/partners">partners</a> to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate “Do Not Call” list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the “Submit My Claim” button and submitting this form, I affirm that I have read and agree to this Site's Terms and Conditions (including the arbitration provision and the E-SIGN consent) and Privacy Policy and agree to receive email from TheAccidentMoney and affiliated brands that may be of interest to you.
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
 
 
@@ -229,7 +222,7 @@
 
     </script>
 
-    
+
 
 
 
@@ -237,27 +230,41 @@
     <!-- Main Content Section with different background -->
     <div class="content-page-container">
 
-            <!-- Left Section -->
-            <div class="left-text-section">
+        <!-- Left Section with Steps -->
+        <div class="left-text-section">
+            <div class="step">
+                <span class="step-number-blank">1</span>
                 <h2>Our Process</h2>
-                <p>Start by filling out our simple form or giving us a quick call for a <span class="highlight-free">FREE</span> case evaluation. We’ll discuss the details of your case and guide you through every step to ensure you understand your options and the path forward.</p>
-                <p>Next, we connect you with an experienced attorney dedicated to fighting for your rights. Our lawyers charge you absolutely <span class="highlight-free">NOTHING</span> upfront — you only pay if we win your case. With us, there’s no financial risk, just committed support focused on getting you the compensation you deserve.</p>
             </div>
-            
-
-            <!-- Right Section with Video -->
-            <div class="right-video-section">
-                <video class="right-video" autoplay loop muted playsinline>
-                    <source src="{% static 'videos/lawyer-to-client.mp4' %}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-
+            <div class="step">
+                <span class="step-number">1</span>
+                <p>Start by filling out our simple form or giving us a quick call for a <span class="highlight-free">FREE</span> case evaluation. We’ll discuss the details of your case and guide you through every step to ensure you understand your options and the path forward.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <p>We’ll connect you with an experienced attorney dedicated to fighting for your rights. Our lawyers charge you absolutely <span class="highlight-free">NOTHING</span> upfront — you only pay if we win your case.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <p>With no financial risk, our support is committed to securing the compensation you deserve.</p>
+            </div>
         </div>
+    
+        <!-- Right Section with Video -->
+        <div class="right-video-section">
+            <video class="right-video" autoplay loop muted playsinline>
+                <source src="{% static 'videos/lawyer-to-client.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
     </div>
+    
+    
 
 
     <div class="display-stats-container">
-        
+
         <div class="stats-list">
             <div class="stat-item">
                 <h3>3,000 Accidents Daily</h3>
@@ -271,7 +278,7 @@
                 <h3>Average Settlement: $20,000</h3>
                 <p>The average car accident settlement is around $20,000, but settlements can vary significantly based on injury severity.</p>
             </div>
-            
+
             <div class="stat-item">
                 <h3>Legal Help Increases Compensation by 3x</h3>
                 <p>Studies show that accident victims with legal representation receive, on average, three times more in compensation.</p>
@@ -283,35 +290,35 @@
         <h2>YOU COULD GET PAID FOR</h2>
         <div class="icons-grid">
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-1.png' %}" alt="Icon 1">
+                <img src="{% static 'icons/1.png' %}" alt="Icon 1">
                 <p>Diminished Vehicle Value</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-2.png' %}" alt="Icon 2">
+                <img src="{% static 'icons/2.png' %}" alt="Icon 2">
                 <p>Medical Expenses</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-3.png' %}" alt="Icon 3">
+                <img src="{% static 'icons/3.png' %}" alt="Icon 3">
                 <p>Pain</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-4.png' %}" alt="Icon 4">
+                <img src="{% static 'icons/4.png' %}" alt="Icon 4">
                 <p>Loss of wage</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-5.png' %}" alt="Icon 5">
+                <img src="{% static 'icons/5.png' %}" alt="Icon 5">
                 <p>Stress</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-6.png' %}" alt="Icon 6">
+                <img src="{% static 'icons/6.png' %}" alt="Icon 6">
                 <p>Personal Injury</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-7.png' %}" alt="Icon 7">
+                <img src="{% static 'icons/7.png' %}" alt="Icon 7">
                 <p>Property Damage</p>
             </div>
             <div class="icon-item">
-                <img src="{% static 'icons/dark-icon-8.png' %}" alt="Icon 8">
+                <img src="{% static 'icons/8.png' %}" alt="Icon 8">
                 <p>Rehabilitation</p>
             </div>
         </div>
@@ -367,12 +374,12 @@
             </div>
         </div>
     </div>
-    
+
     <script>
         function toggleAnswer(element) {
             const answer = element.nextElementSibling;
             const arrow = element.querySelector('.arrow');
-    
+
             if (answer.style.display === "block") {
                 answer.style.display = "none";
                 arrow.textContent = "▼"; // Down arrow when collapsed
@@ -383,27 +390,121 @@
         }
     </script>
 
-    <!-- Sixth Section -->
-    <div class="sixth-section">
-        <div class="left-content">
-            <h2>Don’t Wait – Protect Your Legal Rights Now!</h2>
-            <p>If you’ve been in a car accident, acting quickly can make a huge difference in your recovery and compensation. Our dedicated legal team is ready to provide the guidance you need, helping you receive the maximum support and justice you deserve.</p>
-            <p><strong>Don’t delay!</strong> Every moment counts. Reach out to us now and let us advocate for your rights, clarify the process, and secure the compensation you’re entitled to. <span class="highlight-free">MESSAGE US TODAY FOR A FREE CONSULTATION!</span></p>
-        </div>
-        
-        <div class="right-content">
-            <img src="{% static 'images/start-now.png' %}" alt="Legal Rights Chart" class="content-image">
-        </div>
-        
+    
 
+
+
+<!-- Seventh Section -->
+<div class="seventh-section">
+    <div class="left-content">
+        <h2>Discover Your Potential Personal Injury Compensation</h2>
+        <p>Find out how much compensation you might be eligible to receive with our easy-to-use personal injury calculator. Whether it’s medical expenses, lost wages, or pain and suffering, let us help you understand your potential reward.</p>
+        <p><strong>Ready to start?</strong> Fill in the details below and get an estimate in seconds. Your compensation matters, and we are here to help you every step of the way. <span class="highlight-free">CALCULATE YOUR COMPENSATION TODAY!</span></p>
     </div>
+    <div class="right-content">
+        <form id="injury-calculator" class="calculator-form">
+            <label for="medical-expenses">Medical Expenses ($):</label>
+            <input type="number" id="medical-expenses" name="medical-expenses" min="0" required>
+            
+            <label for="lost-wages">Lost Wages ($):</label>
+            <input type="number" id="lost-wages" name="lost-wages" min="0" required>
+            
+            <label for="pain-suffering">Rate your Pain & Suffering (1-5):</label>
+            <input type="number" id="pain-suffering" name="pain-suffering" min="1" max="5" step="0.1" required>
+            
+            <button type="button" onclick="calculateCompensation()">Calculate Compensation</button>
+        </form>
+        <p id="compensation-result" class="compensation-result"></p>
+    </div>
+</div>
 
-    
-    
-    
-    
-    
-    
+<!-- JavaScript for calculation -->
+<script>
+    function calculateCompensation() {
+        const medicalExpenses = parseFloat(document.getElementById('medical-expenses').value);
+        const lostWages = parseFloat(document.getElementById('lost-wages').value);
+        const painSuffering = parseFloat(document.getElementById('pain-suffering').value);
+        
+        if (isNaN(medicalExpenses) || isNaN(lostWages) || isNaN(painSuffering)) {
+            document.getElementById('compensation-result').innerText = 'Please fill out all fields correctly.';
+            return;
+        }
+        
+        let compensation = (medicalExpenses + lostWages) * painSuffering;
+        compensation = Math.max(compensation, 8000);
+        
+        const resultElement = document.getElementById('compensation-result');
+        resultElement.innerText = `Estimated Compensation: $${compensation.toFixed(2)}`;
+        resultElement.style.transition = 'all 0.5s ease';
+        resultElement.style.transform = 'scale(1.2)';
+        resultElement.style.color = '#ff0000';
+        setTimeout(() => {
+            resultElement.style.transform = 'scale(1)';
+            resultElement.style.color = '#1c1d20';
+        }, 500);
+    }
+</script>
+
+
+
+<div class="eighth-section">
+    <h2>WHY OUR CLIENTS TRUST US</h2>
+
+    <div class="testimonials">
+        
+        <div class="testimonial">
+            <p class="quote">"The team was incredibly helpful and made the entire process stress-free. I received the support I needed and felt like my case truly mattered."</p>
+            <div class="rating">
+                <span>★★★★★</span>
+            </div>
+            <p class="user">- Jessica R.</p>
+        </div>
+        <div class="testimonial">
+            <p class="quote">"I was worried after my accident, but THE ACCIDENT MONEY guided me through everything I needed to know. The quick response and clear communication made all the difference."</p>
+            <div class="rating">
+                <span>★★★★★</span>
+            </div>
+            <p class="user">- Michael T.</p>
+        </div>
+        <div class="testimonial">
+            <p class="quote">"I couldn't be more satisfied. The results exceeded my expectations, and I got the compensation I deserved. I highly recommend them to anyone seeking help!"</p>
+            <div class="rating">
+                <span>★★★★★</span>
+            </div>
+            <p class="user">- Sarah L.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="sixth-section">
+    <div class="left-content">
+        <button class="start-now-btn" onclick="scrollToTop()">Start Now</button>
+    </div>
+    <div class="right-content">
+        <h2>Don’t Wait – Protect Your Legal Rights Now!</h2>
+        <p>If you’ve been in a car accident, acting quickly can make a huge difference in your recovery and compensation. Our dedicated legal team is ready to provide the guidance you need, helping you receive the maximum support and justice you deserve.</p>
+        <p><strong>Don’t delay!</strong> Every moment counts. Reach out to us now and let us advocate for your rights, clarify the process, and secure the compensation you’re entitled to. <span class="highlight-free">MESSAGE US TODAY FOR A FREE CONSULTATION!</span></p>
+    </div>
+</div>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+
 
 
     <!-- Footer Section -->
